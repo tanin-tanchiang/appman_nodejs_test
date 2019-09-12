@@ -12,12 +12,14 @@ const bangkokForecast = async () => {
   });
   for(let i = 0; i < res.length; i++){
     let result = {}
-    result.date = new Date(res[i].dt * 1000);
+    d = new Date(res[i].dt * 1000);
+    var datestring = d.getFullYear()  + "-" + (d.getMonth()+1) + "-" + d.getDate()
+    result.date = new Date(datestring);
     result.minTemp = res[i].temp.min;
     result.maxTemp = res[i].temp.max;
-    console.log(result);
+    results.push(result)
   }
-  return [];
+  return results;
 };
 
 module.exports = { bangkokForecast };
