@@ -3,7 +3,6 @@ const minStep = input => {
   let minStepOddPlus = 0;
   let minStepOddMinus = 0;
   let minStepEven = 0;
-  console.log(input);
   if((input % 2) == 0){
     if(input == 2){
       minStepEven += 1;
